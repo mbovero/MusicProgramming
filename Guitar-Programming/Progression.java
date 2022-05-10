@@ -5,6 +5,7 @@ public class Progression {
   private static List<String> randomMajorChords = Arrays.asList("I", "ii", "iii", "IV", "V", "vi", "vii");
   private static List<String> randomMinorChords = Arrays.asList("i", "ii", "III", "iv", "v", "VI", "VII");
   private static List<String> randomQualities = Arrays.asList("", "m", "dim", "aug", "sus2", "sus4", "m7b5", "dim7", "aug7", "minmaj7", "maj7(#5)", "6", "m6", "add9", "madd9", "add11", "9", "11", "13", "maj13", "b9", "#9", "sus9");
+  private static List<String> keys = Arrays.asList("A", "Bb", "C", "Db", "D", "Eb", "E", "");
 
 
   private Random rand = new Random();
@@ -32,7 +33,7 @@ public class Progression {
     }
     int keyNum =rand.nextInt(12)
     for (int j=0; i<this.length; j++) {
-      
+
     }
   }
 
