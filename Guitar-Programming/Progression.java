@@ -67,7 +67,7 @@ public class Progression {
       String chordNum = randomChords.get(randomIndex);
       this.progressionInitial.add(chordNum)
     }
-    int keyNum =rand.nextInt(12)
+    int keyNum =rand.nextInt(allKeys.size());
     for (int j=0; i<this.length; j++) {
 
     }
