@@ -1,5 +1,4 @@
 import java.util.*;
-package Guitar-Programming;
 
 public class Progression {
   private static List<String> randomChords = Arrays.asList("I", "II", "III", "IV", "V", "VI", "VII");

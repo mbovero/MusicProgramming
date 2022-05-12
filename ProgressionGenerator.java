@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import Guitar-Programming.*;
 
 public class ProgressionGenerator {
 
