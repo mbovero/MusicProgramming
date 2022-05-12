@@ -1,6 +1,10 @@
 import java.util.Scanner;
+import Guitar-Programming.*;
 
-public class PregressionGenerator {
+public class ProgressionGenerator {
+
+  public static boolean again = true;
+
 
   public static void main(String[] args) {
     Scanner scnr = new Scanner(System.in);
@@ -21,6 +25,9 @@ public class PregressionGenerator {
     }
     switch(option) {
       case 'r':
+      System.out.println("\nRANDOM PROGRESSION\nInput your desired progression length:");
+      new Progression(scnr.nextInt()).completelyRandom();
+      scnr.nextLine();
       break;
 
       case 's':
