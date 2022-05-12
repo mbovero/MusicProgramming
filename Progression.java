@@ -79,7 +79,13 @@ public class Progression {
     //replace chord numbers with random key's chords
     this.key = allKeys.get(rand.nextInt(allKeys.size()));
     for (int i=0; i<this.progressionLength; i++) {
-      this.progressionQualities.add(this.progressionInitial.get(i).replace("I", this.key.get(0)).replace("II", this.key.get(1)).replace("III", this.key.get(2)).replace("IV", this.key.get(3)).replace("V", this.key.get(4)).replace("VI", this.key.get(5)).replace("VII", this.key.get(6)));
+      if (this.progressionInitial.get(i).equals("VII")) {this.progressionQualities.add(this.key.get(6));}
+      else if (this.progressionInitial.get(i).equals("VI")) {this.progressionQualities.add(this.key.get(5));}
+      else if (this.progressionInitial.get(i).equals("IV")) {this.progressionQualities.add(this.key.get(3));}
+      else if (this.progressionInitial.get(i).equals("V")) {this.progressionQualities.add(this.key.get(4));}
+      else if (this.progressionInitial.get(i).equals("III")) {this.progressionQualities.add(this.key.get(2));}
+      else if (this.progressionInitial.get(i).equals("II")) {this.progressionQualities.add(this.key.get(1));}
+      else if (this.progressionInitial.get(i).equals("I")) {this.progressionQualities.add(this.key.get(0));}
     }
     //randomize chord qualities
     for (int i=0; i<this.progressionLength; i++) {
@@ -90,10 +96,10 @@ public class Progression {
     this.progressionChordNums = "";
     this.progressionFinal = "";
     for (int i=0; i<this.progressionLength; i++) {
-      this.progressionChordNums += this.progressionInitial.get(i);
-      this.progressionFinal += this.progressionQualities.get(i);
+      this.progressionChordNums += this.progressionInitial.get(i) + " ";
+      this.progressionFinal += this.progressionQualities.get(i) + " ";
     }
-    System.out.println("\n" + this.progressionChordNums + "\n" + this.progressionFinal + "\n");
+    System.out.println("\n" + "Key: " + this.key.get(0) + "\n" + this.progressionChordNums + "\n" + this.progressionFinal + "\n");
   }//end completelyRandom
 
 
