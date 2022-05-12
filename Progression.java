@@ -4,7 +4,7 @@ public class Progression {
   private static List<String> randomChords = Arrays.asList("I", "II", "III", "IV", "V", "VI", "VII");
   private static List<String> MajorChords = Arrays.asList("I", "ii", "iii", "IV", "V", "vi", "vii");
   private static List<String> MinorChords = Arrays.asList("i", "ii", "III", "iv", "v", "VI", "VII");
-  private static List<String> randomQualities = Arrays.asList("", "m", "dim", "aug", "sus2", "sus4", "m7b5", "dim7", "aug7", "minmaj7", "maj7(#5)", "6", "m6", "add9", "madd9", "add11", "9", "11", "13", "maj13", "b9", "#9", "sus9");
+  private static List<String> randomQualities = Arrays.asList("", "m", "dim", "aug", "sus2", "sus4", "m7b5", "dim7", "aug7", "minmaj7", "maj7(#5)", "6", "m6", "add9", "madd9", "add11", "9", "11", "13", "maj13", "7b9", "#9", "sus9", "maj79");
 //Keys
   //private static List<String> allKeys = Arrays.asList("A", "Bb", "B", "Cb", "C", "C#", "Db", "D", "Eb", "E", "F", "F#", "Gb", "G", "Ab", "a", "a#", "bb", "b", "c", "c#", "d", "d#", "eb", "e", "f", "f#", "g", "g#", "ab");
   private static List<String> AKey = Arrays.asList("A", "B", "C#", "D", "E", "F#", "G#");
