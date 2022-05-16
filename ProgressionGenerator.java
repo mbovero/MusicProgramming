@@ -1,10 +1,12 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class ProgressionGenerator {
 
   public static boolean again = true;
   public static boolean subMenuAgain = true;
-
+  public static ArrayList<Progression> storedProgressions = new ArrayList<Progression>();
+  public static int storedProgressionsIndex = -1;
 
   public static void main(String[] args) {
     Scanner scnr = new Scanner(System.in);
@@ -55,7 +57,9 @@ public class ProgressionGenerator {
 
     System.out.println("\n\nRANDOM PROGRESSION\nInput your desired progression length:");
     progressionLength = scnr.nextInt();
-    new Progression(progressionLength).completelyRandom();
+    storedProgressions.add(new Progression(progressionLength));
+    storedProgressionsIndex ++;
+    storedProgressions.get(storedProgressionsIndex).completelyRandom();
     scnr.nextLine();
     System.out.println("Press 'r' to randomize again, 'e' to export progression, or 'q' to return to Main Menu:");
 
@@ -66,12 +70,16 @@ public class ProgressionGenerator {
       }
       switch (option) {
         case 'r':
-        new Progression(progressionLength).completelyRandom();
+        storedProgressions.add(new Progression(progressionLength));
+        storedProgressionsIndex ++;
+        storedProgressions.get(storedProgressionsIndex).completelyRandom();
         option = 'x';
         break;
 
         case 'e':
-        //review how to export... will have to make new variables/objects in this function
+        System.out.println("\nEnter the name of the file you wish to export to:");
+        String exportFile = scnr.nextLine();
+        storedProgressions.get(storedProgressionsIndex).exportProgression(exportFile);
         option = 'x';
         break;
 

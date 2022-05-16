@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class Progression {
   private static List<String> randomChords = Arrays.asList("I", "II", "III", "IV", "V", "VI", "VII");
@@ -101,6 +102,26 @@ public class Progression {
     }
     System.out.println("\n" + "Key: " + this.key.get(0) + "\n" + this.progressionChordNums + "\n" + this.progressionFinal + "\n");
   }//end completelyRandom
+
+  public void exportProgression(String file_name) {
+    boolean successful = true;
+    try {
+      File file = new File(file_name);
+      PrintWriter writer = new PrintWriter(file);
+      writer.println(this.progressionFinal);
+      writer.close();
+    }
+    catch(FileNotFoundException e){
+      System.out.println("Couldn't open the file\n"+e);
+      successful = false;
+    }
+    finally {
+      if (successful) {
+        System.out.println("Progression exported to \"" + file_name + "\"\n");
+        System.out.println("Press 'r' to randomize again, 'e' to export progression, or 'q' to return to Main Menu:");
+      }
+    }
+  }//end exportProgression
 
 
   public static void main(String[] args) {
