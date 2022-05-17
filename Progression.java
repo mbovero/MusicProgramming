@@ -106,12 +106,12 @@ public class Progression {
   public void exportProgression(String file_name) {
     boolean successful = true;
     try {
-      File file = new File(file_name);
-      PrintWriter writer = new PrintWriter(file);
+      //File file = new File(file_name);
+      PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(file_name, true)));
       writer.println(this.progressionFinal);
       writer.close();
     }
-    catch(FileNotFoundException e){
+    catch(IOException e){
       System.out.println("Couldn't open the file\n"+e);
       successful = false;
     }
