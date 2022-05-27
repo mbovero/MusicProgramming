@@ -17,10 +17,10 @@ public class ProgressionGenerator {
 
   public static void printMenu(Scanner scnr) {
     char option = 'x';
-    String optionsPossible = "rsikbq";
+    String optionsPossible = "rsikbq?";
     again = true;
 
-    System.out.println("\nMAIN MENU\nr - Generate completely random chord progression\ns - Generate standardized chord progression\ni - Input a custom chord progression to randomize\nk - Generate chord progression with specific chord quality\nb - Build a custom chord progression one chord at a time\nq - Quit\n");
+    System.out.println("\nMAIN MENU\nr - Generate completely random chord progression\ns - Generate standardized chord progression\ni - Input a custom chord progression to randomize\nk - Generate chord progression with specific chord quality\nb - Build a custom chord progression one chord at a time\n? - Help\nq - Quit\n");
     while (optionsPossible.indexOf(option) == -1) {
       System.out.println("Choose an option:");
       option = scnr.next().charAt(0);
@@ -41,6 +41,10 @@ public class ProgressionGenerator {
       break;
 
       case 'b':
+      break;
+
+      case'?':
+      //create help function - mention r for random and ? on other menus for help
       break;
 
       case 'q':
@@ -73,7 +77,7 @@ public class ProgressionGenerator {
       }
       switch (option) {
         case 'r':
-        storedProgressions.add(new Progression(progressionLength));
+        storedProgressions.add(new Progression(progressionLength, keyString));
         storedProgressionsIndex ++;
         storedProgressions.get(storedProgressionsIndex).completelyRandom();
         option = 'x';
