@@ -54,13 +54,16 @@ public class ProgressionGenerator {
     char option = 'x';
     subMenuAgain = true;
     int progressionLength;
+    String keyString;
 
     System.out.println("\n\nRANDOM PROGRESSION\nInput your desired progression length:");
     progressionLength = scnr.nextInt();
-    storedProgressions.add(new Progression(progressionLength));
+    scnr.nextLine();
+    System.out.println("Input the desired key for your progression or 'r' for a random key:");
+    keyString = scnr.nextLine().trim();
+    storedProgressions.add(new Progression(progressionLength, keyString));
     storedProgressionsIndex ++;
     storedProgressions.get(storedProgressionsIndex).completelyRandom();
-    scnr.nextLine();
     System.out.println("Press 'r' to randomize again, 'e' to export progression, or 'q' to return to Main Menu:");
 
     do {
